@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}Editoriales | Biblioteca Virtual{% endblock %}
+
+{% block content %}
+<div class="row mt-4">
+    <div class="col-12 text-center mb-4">
+        <h2><i class="fas fa-building"></i> Editoriales</h2>
+        <p class="text-muted">Consulta las editoriales que colaboran con nuestra biblioteca virtual.</p>
+    </div>
+</div>
+<div class="row justify-content-center">
+    <!-- Ejemplo de editorial -->
+    <div class="col-md-4 mb-4">
+        <div class="card h-100 shadow-sm text-center">
+            <div class="card-body">
+                <i class="fas fa-building fa-2x mb-2 text-primary"></i>
+                <h5 class="card-title">Editorial Planeta</h5>
+                <p class="card-text">Una de las editoriales más grandes del mundo hispanohablante.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-4">
+        <div class="card h-100 shadow-sm text-center">
+            <div class="card-body">
+                <i class="fas fa-building fa-2x mb-2 text-success"></i>
+                <h5 class="card-title">Alfaguara</h5>
+                <p class="card-text">Reconocida por su catálogo de literatura contemporánea.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-4">
+        <div class="card h-100 shadow-sm text-center">
+            <div class="card-body">
+                <i class="fas fa-building fa-2x mb-2 text-warning"></i>
+                <h5 class="card-title">Anagrama</h5>
+                <p class="card-text">Especializada en narrativa y ensayo de calidad.</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

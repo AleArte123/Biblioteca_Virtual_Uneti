@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Bienvenido a la Biblioteca Virtual{% endblock %}
+
+{% block content %}
+<div class="text-center mt-5">
+    <h1 class="display-4">¡Bienvenido a la Biblioteca Virtual!</h1>
+    <p class="lead mt-3">
+        Explora una amplia colección de libros y autores.<br>
+        Busca, consulta y descubre nuevos títulos desde cualquier lugar.
+    </p>
+    <a href="/libros" class="btn btn-primary btn-lg mt-4">Explorar Libros</a>
+    <a href="/autores" class="btn btn-outline-primary btn-lg mt-4 ms-2">Ver Autores</a>
+</div>
+{% endblock %}
