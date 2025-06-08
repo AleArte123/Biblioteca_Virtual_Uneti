@@ -1,0 +1,65 @@
+<div id="registerModalW3" class="w3-modal w3-animate-opacity">
+    <div class="w3-modal-content w3-card-4 w3-animate-zoom modal-register-content">
+
+        <header class="w3-container modal-register-header">
+            <span onclick="document.getElementById('registerModalW3').style.display='none'"
+                  class="w3-button w3-display-topright w3-hover-none w3-hover-text-light-grey modal-close-button">&times;</span>
+            <h2 class="modal-register-title">Crear una Cuenta</h2>
+        </header>
+
+        <div class="w3-container w3-padding-32">
+            <form action="{{ url_for('auth.register') }}" method="post">
+                <p>
+                    <label for="regEmail"><b>Email</b></label>
+                    <input class="w3-input w3-border w3-round-large w3-margin-bottom" type="email"
+                           placeholder="Ingresa tu correo electrónico" name="email" id="regEmail" required>
+                </p>
+
+                <p>
+                    <label for="regUsername"><b>Usuario</b></label>
+                    <input class="w3-input w3-border w3-round-large w3-margin-bottom" type="text"
+                           placeholder="Crea un nombre de usuario" name="nombre" id="regUsername" required>
+                </p>
+
+                <p>
+                    <label for="regPassword"><b>Contraseña</b></label>
+                    <input class="w3-input w3-border w3-round-large" type="password"
+                           placeholder="Crea una contraseña" name="password" id="regPassword" required>
+                </p>
+
+                <p class="w3-margin-top">
+                    <label for="regConfirmPassword"><b>Confirma Contraseña</b></label>
+                    <input class="w3-input w3-border w3-round-large" type="password"
+                           placeholder="Confirma tu contraseña" name="confirm_password" id="regConfirmPassword" required>
+                </p>
+
+                <button class="w3-button w3-block w3-section w3-padding-large w3-round-xxlarge boton-principal w3-margin-top"
+                        type="submit">
+                    Registrarme
+                </button>
+            </form>
+        </div>
+
+        <footer class="w3-container w3-padding-16 modal-register-footer">
+            <button onclick="document.getElementById('registerModalW3').style.display='none'"
+                    type="button" class="w3-button w3-red w3-round-xxlarge w3-hover-red">Cancelar</button>
+            <span class="w3-right w3-padding w3-hide-small modal-footer-text">¿Ya tienes cuenta? <a
+                href="#" onclick="document.getElementById('registerModalW3').style.display='none'; document.getElementById('loginModalW3').style.display='block';"
+                class="modal-footer-link">Inicia Sesión</a></span>
+        </footer>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+

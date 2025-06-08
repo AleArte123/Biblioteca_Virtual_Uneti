@@ -1,0 +1,124 @@
+/* ---------- Style login_register integrado a login_register.html --------- */ 
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+    
+}
+
+
+
+/* -------------- Estilo Logo Pagina Principal ------------- */
+.logo_UNETI {
+    margin-bottom: -130px;       /* Margen para separar del siguiente elemento */
+    width: 380px;               /* Ancho de píxeles */
+    height:350px;               /* Alto de píxeles */
+
+  
+}
+
+/* -------------- Estilo Botones Pagina Principal ------------- */
+.boton-1 {
+    width: 200px;
+    margin-bottom: -110px;
+    font-size: 20px;
+    background-color: #182052 !important;
+
+}
+
+.boton-1:hover{
+    background-color: lightgray !important;
+}
+
+/* -------------- Estilo Modal Generico  ------------- */
+
+.w3-modal-content {
+    max-width: 600px;
+    margin-top: -10vh;
+    
+}
+
+/* botón de cierre encabezado */
+.modal-close-button { 
+    font-size: 24px;
+    
+}
+
+/* enlace de link en el footer del modal*/
+.modal-footer-link {
+    color: #182052;
+    font-weight: bold;
+}
+
+/* texto en el footer del modal */
+.modal-footer-text { 
+    color: #555;
+}
+
+
+
+/* -------------- Estilo Modal Registro   ------------- */
+
+/* Encabezado de modal */
+.modal-register-header { 
+    background-color: #182052;
+    color: white;
+
+}
+
+/* Titulo del modal */
+.modal-register-title {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+
+/* pie de página del modal */
+.modal-register-footer { /* Nueva clase personalizada */
+    background-color: #f1f1f1;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    padding-top: 16px; 
+    padding-bottom: 16px;
+}
+
+
+/* -------------- Estilo Modal Login  ------------- */
+
+/* Encabezado de modal */
+.modal-login-header { 
+    background-color: #182052;
+    color: white;
+
+}
+
+/* Titulo del modal */
+.modal-login-title {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+
+/* pie de página del modal */
+.modal-login-footer { /* Nueva clase personalizada */
+    background-color: #f1f1f1;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    padding-top: 16px; 
+    padding-bottom: 16px;
+}
+
+
+@font-face {
+    font-family: 'OriginTech';
+    src: url('../fonts/OriginTech_personal_use.otf') format('opentype') ,
+         url('../fonts/OriginTech_personal_use.ttf') format('truetype'); 
+    font-weight: normal; 
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
+
+

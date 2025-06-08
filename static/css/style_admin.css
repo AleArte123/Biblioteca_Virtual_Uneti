@@ -1,0 +1,243 @@
+/* style_user.css */
+
+/* Fuentes personalizadas */
+@font-face {
+    font-family: 'OriginTech';
+    src: url('../fonts/OriginTech_personal_use.otf') format('opentype'),
+         url('../fonts/OriginTech_personal_use.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+}
+
+.boton-2 {
+    background-color: #182052;
+    color: #f5db00;
+}
+
+/* Estilos para la tarjeta principal que contiene todo el layout */
+.main-card {
+    width: 80%;
+    max-width: 1320px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;                        /* toda la tarjeta con bordes redondeados */
+    overflow: hidden;                           /*  bordes redondeados se vean bien con el contenido */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);    /* Sombra para que destaque la tarjeta principal*/
+}
+/* Barra Superior del Admin */
+.admin-navbar {
+    background-color: #182052;                /* Color de fondo */
+    color: #f5db00;                           /* Color del texto y elementos */
+    padding: 8px 16px;                          /* Padding interno */
+    display: flex;                              /* Asegura que los elementos se distribuyan bien */
+    align-items: center;                        /* Alinea verticalmente los items */
+    border-top-left-radius: 15px;               /* Redondear las esquinas superiores si la tarjeta tiene border-radius */
+    border-top-right-radius: 15px;
+    flex-shrink: 0; /* Evita que se encoja */
+}
+
+.admin-navbar-logo {
+    height: 50px;                              /* Tamaño del logo en la barra */
+    margin-right: 15px;                        /* Espacio entre el logo y el título */
+    width: auto;
+}
+
+.admin-navbar-title {
+    font-family: 'OriginTech', sans-serif;     /* Aplica tu fuente personalizada */
+    font-size: 28px;                           /* Tamaño del texto del título */
+    color: #f5db00; /* Un color claro para el texto */
+    padding-left: 0; 
+    padding-right: 15px;
+}
+
+/* Sidebar del Admin */
+.admin-sidebar {
+    background-color: lightgrey; /* Un color de fondo para la barra lateral */
+    border-right: 1px solid #ddd; /* Separador visual entre sidebar y contenido */
+    padding-top: 15px; /* Espacio superior */
+    padding-bottom: 15px; /* Espacio inferior */
+    display: flex; /* Para controlar la altura del w3-bar-block */
+    flex-direction: column; /* Para que el w3-bar-block ocupe todo el espacio */
+    overflow-y: auto; /* Si el sidebar tiene muchos items, que tenga scroll */
+    border-bottom-left-radius: 15px; /* Redondear la esquina inferior izquierda si la tarjeta tiene border-radius */
+}
+
+.admin-sidebar .sidebar-item {
+    color: #182052; /* Color de texto de los items */
+    font-weight: bold;
+    padding: 12px 16px; /* Ajuste del padding para los items */
+    border-left: 5px solid transparent; /* Efecto de borde al seleccionar */
+    transition: background-color 0.3s, color 0.3s, border-left-color 0.3s; /* Transición suave */
+}
+
+.admin-sidebar .sidebar-item:hover {
+    background-color: #ddd;
+    color: #000;
+    border-left-color: #f5db00; /* Color al pasar el mouse */
+}
+
+/* Estilos de la Sección de Contenido (Columnas) */
+
+.no-gutters {
+    margin-right: 0;
+    margin-left: 0;
+}
+.no-gutters > .col,
+.no-gutters > [class*="col-"] {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+/* Asegurarse que el row dentro de main-card ocupe toda la altura restante */
+.main-card > .row {
+    height: calc(100% - 60px); /* Aproximadamente la altura de la navbar. Ajusta si la navbar es de altura fija */
+    /* O simplemente flex-grow: 1 como ya está, si la altura de la navbar es variable */
+}
+
+
+/* Item de Cerrar Sesión con estilo diferente */
+.admin-sidebar .sidebar-logout-item {
+    color: red; /* Color rojo para el botón de cerrar sesión */
+    font-weight: bold;
+    padding: 12px 16px;
+    margin-top: auto; /* Empuja el botón al final del sidebar */
+    text-align: center;
+    border-left: 5px solid transparent;
+    transition: background-color 0.3s, color 0.3s, border-left-color 0.3s;
+}
+
+.admin-sidebar .sidebar-logout-item:hover {
+    background-color: #f2dede; /* Fondo rojo claro al pasar el mouse */
+    color: #a94442;
+    border-left-color: #d9534f;
+}
+
+/* Área de contenido principal del Admin */
+.admin-content-area {
+    background-color: white; /* Fondo blanco para el área de contenido */
+    overflow-y: auto; /* Importante: scroll vertical si el contenido excede la altura */
+    padding: 20px; /* Padding para el contenido */
+    border-bottom-right-radius: 15px; /* Redondear la esquina inferior derecha si la tarjeta tiene border-radius */
+}
+
+/* Estilos de botones generales en admin */
+.admin-content-area .w3-button.w3-dark-grey {
+    background-color: #34495e !important;
+    color: white !important;
+}
+
+.admin-content-area .w3-button.w3-dark-grey:hover {
+    background-color: #2c3e50 !important;
+}
+
+/* Otros estilos específicos para secciones de admin si es necesario */
+/* Por ejemplo, estilos para tablas, formularios, etc. */
+.admin-table-container {
+    overflow-x: auto; /* Para tablas grandes en pantallas pequeñas */
+}
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+.admin-table th, .admin-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+.admin-table th {
+    background-color: #182052;
+    color: #f5db00;
+}
+
+.fixed-button.w3-tiny {
+    width: 80px; /* Ancho más pequeño para botones tiny */
+    height: 28px; /* Alto más pequeño para botones tiny */
+}
+
+/* Estilos para botones personalizados en el panel de administración */
+.admin-custom-button {
+    background-color: #182052 !important; /* Tu color de fondo */
+    color: #f5db00 !important; /* Tu color de texto */
+    /* w3-round-xxlarge ya manejará los bordes */
+    /* Si quieres un tamaño fijo, también podrías añadir aquí: */
+    /* width: 90px; */
+    /* height: 32px; */
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* padding: 0 5px; */
+    /* box-sizing: border-box; */
+}
+
+.admin-custom-button:hover {
+    background-color: #2a3a60 !important; /* Un tono ligeramente diferente para el hover */
+    color: #ffe033 !important; /* Un tono más brillante para el hover */
+}
+
+/* Variante roja para botones de eliminar/bloquear */
+.admin-custom-button-red {
+    background-color: #dc3545 !important; /* Rojo de Bootstrap */
+    color: white !important;
+}
+
+.admin-custom-button-red:hover {
+    background-color: #c82333 !important;
+    color: white !important;
+}
+
+/* Asegúrate de que admin-info-card tiene un display flex para que su contenido se centre */
+.admin-info-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%; /* Importante para que las tarjetas de estadísticas tengan la misma altura */
+    background-color: #ffffff; /* Fondo blanco para las tarjetas de información */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Sombra sutil */
+}
+
+/* Estilos para los íconos grandes */
+.admin-stats-section .w3-jumbo {
+    font-size: 20px !important; /* Ajusta el tamaño si es necesario */
+    margin-bottom: 10px;
+}
+
+/* Estilos para los números grandes */
+.admin-stats-section .w3-xxlarge {
+    font-size: 1.5em !important; /* Haz los números realmente grandes */
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Estilos para las listas dentro de las tarjetas (Top 5, Actividad Reciente) */
+.admin-stats-section .w3-ul {
+    width: 100%; /* Ocupa el ancho completo de su contenedor */
+    margin-top: 15px;
+    border-bottom: none !important; /* Elimina borde inferior de la lista */
+    border-top: none !important; /* Elimina borde superior de la lista */
+    box-shadow: none !important; /* Elimina la sombra de la lista si la tiene */
+}
+
+.admin-stats-section .w3-ul li {
+    border-bottom: 1px solid #eee; /* Separador entre elementos de la lista */
+    padding: 8px 0;
+}
+
+.admin-stats-section .w3-ul li:last-child {
+    border-bottom: none; /* Elimina el borde inferior del último elemento */
+}
+
+.admin-stats-section .w3-tag {
+    font-size: 12px;
+    padding: 3px 8px;
+    margin-left: 10px; /* Espacio entre el texto y la etiqueta */
+}

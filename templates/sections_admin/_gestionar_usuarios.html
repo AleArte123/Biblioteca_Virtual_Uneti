@@ -1,0 +1,90 @@
+<div class="w3-container w3-padding-16 admin-users-section">
+
+    <div class="w3-row-padding w3-margin-bottom">
+        <div class="w3-col l8 m8 s12">
+            <input class="w3-input w3-border w3-round-large" type="text" placeholder="Buscar usuario por nombre o correo..." id="adminSearchUserInput">
+        </div>
+        <div class="w3-col l4 m4 s12 w3-margin-top-small">
+            <button class="w3-button w3-round-xxlarge w3-block boton-2" onclick="adminSearchUsers()">
+                <i class="fa fa-search w3-margin-right"></i>Buscar
+            </button>
+        </div>
+    </div>
+
+    <div class="w3-card w3-round-large w3-padding admin-table-container">
+        <h3 class="w3-text-theme w3-border-bottom w3-border-light-grey w3-padding-small">Lista de Usuarios</h3>
+        <table class="w3-table w3-striped w3-bordered w3-hoverable admin-table">
+            <thead>
+                <tr class="w3-light-grey">
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Correo</th>
+                    <th>Rol</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Juan Pérez</td>
+                    <td>juan@example.com</td>
+                    <td>Usuario</td>
+                    <td>
+                        <button class="w3-button w3-round-xxlarge admin-custom-button w3-tiny w3-margin-right" onclick="editUser(1)">Editar</button>
+                        <button class="w3-button w3-red w3-round-xxlarge admin-custom-button-red w3-tiny" onclick="blockUser(1)">Bloquear</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>María García</td>
+                    <td>maria@example.com</td>
+                    <td>Usuario</td>
+                    <td>
+                        <button class="w3-button w3-round-xxlarge admin-custom-button w3-tiny w3-margin-right" onclick="editUser(2)">Editar</button>
+                        <button class="w3-button w3-red w3-round-xxlarge admin-custom-button-red w3-tiny" onclick="blockUser(2)">Bloquear</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Carlos Administrador</td>
+                    <td>admin@example.com</td>
+                    <td>Administrador</td>
+                    <td>
+                        <button class="w3-button w3-round-xxlarge admin-custom-button w3-tiny w3-margin-right" onclick="editUser(3)">Editar</button>
+                        <button class="w3-button w3-red w3-round-xxlarge admin-custom-button-red w3-tiny" disabled title="No se puede bloquear un administrador">Bloquear</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="w3-center w3-margin-top">
+            <button class="w3-button w3-round-xxlarge admin-custom-button" onclick="openAddUserModal()">
+                <i class="fa fa-user-plus w3-margin-right"></i>Añadir Nuevo Usuario
+            </button>
+        </div>
+    </div>
+</div>
+
+<script>
+    function adminSearchUsers() {
+        const searchTerm = document.getElementById('adminSearchUserInput').value;
+        console.log('Buscando usuarios en admin con:', searchTerm);
+        // Lógica para buscar usuarios en el backend
+    }
+
+    function editUser(userId) {
+        alert('Editar usuario con ID: ' + userId + ' (funcionalidad pendiente).');
+        // Aquí ira la lógica para cargar un modal de edición o redirigir
+    }
+
+    function blockUser(userId) {
+        if (confirm('¿Estás seguro de que quieres bloquear a este usuario (ID: ' + userId + ')?')) {
+            alert('Usuario con ID: ' + userId + ' bloqueado (funcionalidad pendiente).');
+            // Aquí ira la llamada al backend para bloquear al usuario
+        }
+    }
+
+    function openAddUserModal() {
+        alert('Abrir formulario/modal para añadir un nuevo usuario (funcionalidad pendiente).');
+        // Aquí ira la lógica para mostrar un formulario en un modal o redirigir
+    }
+</script>

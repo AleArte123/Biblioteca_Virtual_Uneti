@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Biblioteca Virtual - UNETI </title>
+
+<!------------------------------------- Bootstrap ------------------------------------------------->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!--------------------------------------- W3.css -------------------------------------------------->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+
+
+<!------------------------------ Diseño CSS personalizado ----------------------------------------->
+    <link rel="stylesheet" href="../static/css/style_login_register.css">
+
+
+
+</head>
+    
+<body>
+<!------------------------Tarjeta de contenido ------------------------------------------------------->
+    <div class="container-fluid vh-100 d-flex justify-content-center align-items-center bg-light">
+        <div class="w3-card" style="width: 80%; max-width: 1320px; height: 600px; display: flex; 
+        flex-direction: column; border-radius: 15px; overflow: hidden;">
+
+<!------------------------------ Columna Izquierda Tarjeta de contenido ------------------------------>
+            <div class="row h-100"> 
+                <div class="col-md-6 columna-izquierda d-flex flex-column align-items-center">
+                    <img src="../static/images/logoUNETI.png" alt="UNETI Logo" class="logo_UNETI">
+                    <h2 class="text-center-1 mt-4" style="color: #182052; font-family:'OriginTech'; font-size: 40px"> 
+                        Biblioteca Virtual </h2>
+                    <p class="text-center-2 mt-3" style="color: #182052; font-size:15px; padding:70px">
+                        Un espacio diseñado para ampliar tus conocimientos.</p>
+                    <p class="text-center-3 mt-auto" style="font-size: 0.8em; color: #888;">
+                        © 2025 Diseñado por Grupo 1, Todos los derechos reservados</p>
+                </div>
+<!------------------------------ Columna Derecha Tarjeta de contenido ------------------------------>               
+                <div class="col-md-6 columna-derecha d-flex flex-column align-items-center"
+                style="background-color: #f5db00 ; background-image: linear-gradient(#f5db00, white)"> 
+                   <h2 class= "text-center-4 mt-5" style="color: #182052; font-weight: bold; padding: 100px; font-size: 40px">
+                    ¡Bienvenido!</h2>
+
+                    <!-------- Boton 1 ---------------->
+                    <button 
+                    onclick="document.getElementById('registerModalW3').style.display='block'"
+                    class="w3-button w3-black w3-round-xxlarge boton-1"> Registrate </button>
+                    
+                    <!-------- Boton 2 ---------------->
+                    <button 
+                    onclick="document.getElementById('loginModalW3').style.display='block'"
+                    class="w3-button w3-black w3-round-xxlarge boton-1"> Inicia Sesión </button>
+
+                </div>
+            </div>
+
+    </div>
+<!------------------------------ Integracion de Modal / Ventanas Emergentes ------------------------------>   
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    
+    </div> </div> {% include 'modal_login_register/_modal_registro.html' %}
+                  {% include 'modal_login_register/_modal_iniciosesion.html' %}
+
+<!------------------------------ Mensajes Flash  ------------------------------>                    
+    <div class="container-fluid vh-100 d-flex justify-content-center align-items-center bg-light">
+        <div class="messages-container" style="position: absolute; top: 10px; width: 100%; text-align: center;">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert" style="width: fit-content; margin: 0 auto; margin-bottom: 5px;">
+                            {{ message }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+        </div>
+
+
+</body>
+</html>

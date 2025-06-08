@@ -1,0 +1,54 @@
+<div class="w3-container w3-padding-16 user-settings-section">
+
+    <div class="w3-card w3-round-large w3-padding">
+        <h3 class="w3-text-theme w3-border-bottom w3-border-light-grey w3-padding-small">Cambiar Contraseña</h3>
+        <div class="w3-row-padding w3-margin-top">
+            <div class="w3-col m6">
+                <label for="currentPassword" class="w3-text-grey">Contraseña Actual</label>
+                <input class="w3-input w3-border w3-round-large w3-margin-bottom" type="password" id="currentPassword" placeholder="Tu contraseña actual">
+            </div>
+            <div class="w3-col m6">
+                <label for="newPassword" class="w3-text-grey">Nueva Contraseña</label>
+                <input class="w3-input w3-border w3-round-large w3-margin-bottom" type="password" id="newPassword" placeholder="Tu nueva contraseña">
+            </div>
+            <div class="w3-col m6">
+                <label for="confirmNewPassword" class="w3-text-grey">Confirmar Nueva Contraseña</label>
+                <input class="w3-input w3-border w3-round-large w3-margin-bottom" type="password" id="confirmNewPassword" placeholder="Repite tu nueva contraseña">
+            </div>
+            <div class="w3-col m12 w3-right-align w3-margin-top">
+                <button class="w3-button w3-round-xxlarge boton-2" onclick="changePassword()">Guardar Contraseña</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    function changePassword() {
+        const currentPass = document.getElementById('currentPassword').value;
+        const newPass = document.getElementById('newPassword').value;
+        const confirmNewPass = document.getElementById('confirmNewPassword').value;
+
+        if (newPass === "" || confirmNewPass === "") {
+            alert('Por favor, ingresa y confirma tu nueva contraseña.');
+            return;
+        }
+
+        if (newPass !== confirmNewPass) {
+            alert('La nueva contraseña y su confirmación no coinciden.');
+            return;
+        }
+        
+        console.log('Intentando cambiar contraseña...');
+        console.log('Actual:', currentPass, 'Nueva:', newPass);
+        
+        // Aquí se va a colocar la lógica para enviar los datos al backend Flask
+        // Por ahora, solo se mosrara una alerta de confirmación
+        alert('Contraseña cambiada exitosamente (funcionalidad backend pendiente).');
+
+        // Opcional: Limpiar los campos del formulario después del intento
+        document.getElementById('currentPassword').value = '';
+        document.getElementById('newPassword').value = '';
+        document.getElementById('confirmNewPassword').value = '';
+    }
+</script>

@@ -1,0 +1,97 @@
+<div class="w3-container w3-padding-16 admin-stats-section">
+
+    <div class="w3-row-padding w3-margin-top d-flex align-items-stretch">
+        <div class="w3-col l4 m6 s12 w3-margin-bottom">
+            <div class="w3-card w3-round-large w3-hover-shadow w3-padding-large w3-center admin-info-card d-flex flex-column justify-content-center">
+                <i class="fa fa-book w3-jumbo w3-text-theme"></i>
+                <h4 class="w3-text-dark-grey">Total de Libros</h4>
+                <p class="w3-xxlarge w3-text-blue"><strong>523</strong></p>
+                <p class="w3-small w3-text-grey">Disponibles en la plataforma</p>
+            </div>
+        </div>
+
+        <div class="w3-col l4 m6 s12 w3-margin-bottom">
+            <div class="w3-card w3-round-large w3-hover-shadow w3-padding-large w3-center admin-info-card d-flex flex-column justify-content-center">
+                <i class="fa fa-users w3-jumbo w3-text-theme"></i>
+                <h4 class="w3-text-dark-grey">Usuarios Registrados</h4>
+                <p class="w3-xxlarge w3-text-blue"><strong>1287</strong></p>
+                <p class="w3-small w3-text-grey">Cuentas de usuario activas</p>
+            </div>
+        </div>
+
+        <div class="w3-col l4 m6 s12 w3-margin-bottom">
+            <div class="w3-card w3-round-large w3-hover-shadow w3-padding-large w3-center admin-info-card d-flex flex-column justify-content-center">
+                <i class="fa fa-download w3-jumbo w3-text-theme"></i>
+                <h4 class="w3-text-dark-grey">Total de Descargas</h4>
+                <p class="w3-xxlarge w3-text-blue"><strong>8541</strong></p>
+                <p class="w3-small w3-text-grey">Descargas acumuladas</p>
+            </div>
+        </div>
+    </div>
+    <div class="w3-row-padding w3-margin-top d-flex align-items-stretch">
+        <div class="w3-col l6 m6 s12 w3-margin-bottom">
+            <div class="w3-card w3-round-large w3-padding admin-info-card d-flex flex-column">
+                <h4 class="w3-text-theme w3-border-bottom w3-border-light-grey w3-padding-small">Libros Más Descargados (Top 5)</h4>
+                <ul class="w3-ul w3-left-align w3-margin-top flex-grow-1">
+                    <li class="w3-padding-small">1. El Principito <span class="w3-right w3-tag w3-blue w3-round-large">1200 desc.</span></li>
+                    <li class="w3-padding-small">2. 1984 <span class="w3-right w3-tag w3-blue w3-round-large">980 desc.</span></li>
+                    <li class="w3-padding-small">3. Don Quijote de la Mancha <span class="w3-right w3-tag w3-blue w3-round-large">750 desc.</span></li>
+                    <li class="w3-padding-small">4. Cien Años de Soledad <span class="w3-right w3-tag w3-blue w3-round-large">600 desc.</span></li>
+                    <li class="w3-padding-small">5. El Arte de la Guerra <span class="w3-right w3-tag w3-blue w3-round-large">550 desc.</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="w3-col l6 m6 s12 w3-margin-bottom">
+            <div class="w3-card w3-round-large w3-padding admin-info-card d-flex flex-column">
+                <h4 class="w3-text-theme w3-border-bottom w3-border-light-grey w3-padding-small">Actividad Reciente</h4>
+                <ul class="w3-ul w3-left-align w3-margin-top flex-grow-1">
+                    <li class="w3-padding-small">
+                        <span class="w3-small">Usuario "JuanPerez" descargó "El Gran Gatsby".</span><br>
+                        <span class="w3-opacity w3-small">Hace 5 minutos</span>
+                    </li>
+                    <li class="w3-padding-small">
+                        <span class="w3-small">Nuevo libro "Astrofísica para Dummies" añadido.</span><br>
+                        <span class="w3-opacity w3-small">Hace 30 minutos</span>
+                    </li>
+                    <li class="w3-padding-small">
+                        <span class="w3-small">Usuario "MariaGarcia" actualizó su perfil.</span><br>
+                        <span class="w3-opacity w3-small">Hace 1 hora</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="w3-card w3-round-large w3-padding w3-margin-top">
+        <h3 class="w3-text-theme w3-border-bottom w3-border-light-grey w3-padding-small">Generar Reportes Detallados</h3>
+        <p class="w3-text-grey">Puedes generar informes completos sobre el uso de la biblioteca, usuarios y libros. Selecciona el tipo de reporte deseado.</p>
+        <div class="w3-row-padding w3-margin-top">
+            <div class="w3-col l6 m6 s12 w3-margin-bottom">
+                <select class="w3-select w3-border w3-round-large" name="reportType" id="reportType">
+                    <option value="" disabled selected>Selecciona Tipo de Reporte</option>
+                    <option value="libros">Reporte de Libros</option>
+                    <option value="usuarios">Reporte de Usuarios</option>
+                    <option value="descargas">Reporte de Descargas</option>
+                    <option value="completo">Reporte Completo</option>
+                </select>
+            </div>
+            <div class="w3-col l6 m6 s12 w3-margin-bottom">
+                <button class="w3-button w3-round-xxlarge admin-custom-button w3-block" onclick="generateReport()">
+                    <i class="fa fa-file-export w3-margin-right"></i>Generar Reporte
+                </button>
+            </div>
+        </div>
+    </div>
+    </div>
+
+<script>
+    function generateReport() {
+        const reportType = document.getElementById('reportType').value;
+        if (reportType === "") {
+            alert('Por favor, selecciona un tipo de reporte.');
+            return;
+        }
+        alert('Generando reporte tipo: ' + reportType + ' (funcionalidad backend pendiente).');
+        // Aquí va ir la llamada al backend para generar y descargar el reporte
+    }
+</script>

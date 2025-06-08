@@ -1,0 +1,280 @@
+/* style_user.css */
+
+/* Fuentes personalizadas */
+@font-face {
+    font-family: 'OriginTech';
+    src: url('../fonts/OriginTech_personal_use.otf') format('opentype'),
+         url('../fonts/OriginTech_personal_use.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+}
+
+.boton-2 {
+    background-color: #182052;
+    color: #f5db00;
+}
+
+/* Estilos para la tarjeta principal que contiene todo el layout */
+.main-card {
+    width: 80%;
+    max-width: 1320px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;                        /* toda la tarjeta con bordes redondeados */
+    overflow: hidden;                           /*  bordes redondeados se vean bien con el contenido */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);    /* Sombra para que destaque la tarjeta principal*/
+}
+
+
+
+/* Estilo de la Barra Superior (Navbar) */
+
+.user-navbar {
+    background-color: #f5db00;                /* Color de fondo */
+    color: #182052;                           /* Color del texto y elementos */
+    padding: 8px 16px;                          /* Padding interno */
+    display: flex;                              /* Asegura que los elementos se distribuyan bien */
+    align-items: center;                        /* Alinea verticalmente los items */
+    border-top-left-radius: 15px;               /* Redondear las esquinas superiores si la tarjeta tiene border-radius */
+    border-top-right-radius: 15px;
+    flex-shrink: 0; /* Evita que se encoja */
+}
+
+.user-navbar-logo {
+    height: 50px;                              /* Tamaño del logo en la barra */
+    margin-right: 15px;                        /* Espacio entre el logo y el título */
+    width: auto;
+
+}
+
+.user-navbar-title {
+    font-family: 'OriginTech', sans-serif;     /* Aplica tu fuente personalizada */
+    font-size: 28px;                           /* Tamaño del texto del título */
+    color: #182052;                           /* Asegura el color blanco */
+    padding-left: 0; 
+    padding-right: 15px;
+}
+
+/* Asegurarse que los elementos de w3-right en la navbar tengan el color correcto */
+.user-navbar .w3-right .w3-bar-item {
+    color: white;
+}
+.user-navbar .w3-right .w3-bar-item:hover {
+    color: #f5db00; /* Color al pasar el mouse por los enlaces de la derecha */
+    background-color: transparent; /* No cambia el fondo */
+}
+
+/* Si quieres que los botones de la barra (ej. Cerrar Sesión) se vean como botones W3.CSS pero personalizados */
+.user-navbar .w3-button {
+    color: white;
+    padding: 8px 16px;
+    /* Eliminar borde si W3.CSS lo añade por defecto y no lo quieres */
+    /* border: none; */
+}
+
+.user-navbar .w3-button:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Ligero hover effect */
+    color: white;
+}
+
+/* Estilos de la Sección de Contenido (Columnas) */
+
+.no-gutters {
+    margin-right: 0;
+    margin-left: 0;
+}
+.no-gutters > .col,
+.no-gutters > [class*="col-"] {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+/* Columna de Navegación Lateral (Sidebar) */
+.user-sidebar {
+    background-color: #182052; /* Un color de fondo para la barra lateral */
+    border-right: 1px solid #ddd; /* Separador visual entre sidebar y contenido */
+    padding-top: 15px; /* Espacio superior */
+    padding-bottom: 15px; /* Espacio inferior */
+    display: flex; /* Para controlar la altura del w3-bar-block */
+    flex-direction: column; /* Para que el w3-bar-block ocupe todo el espacio */
+    overflow-y: auto; /* Si el sidebar tiene muchos items, que tenga scroll */
+    border-bottom-left-radius: 15px; /* Redondear la esquina inferior izquierda si la tarjeta tiene border-radius */
+}
+
+.user-sidebar .w3-bar-block {
+    width: 100%; /* Para que los items de la barra ocupen todo el ancho de la columna */
+    flex-grow: 1; /* Ocupa el espacio restante en la columna sidebar */
+}
+
+.user-sidebar .sidebar-item {
+    color: #f5db00; /* Color de texto de los items */
+    font-weight: bold;
+    padding: 12px 16px; /* Ajuste del padding para los items */
+    border-left: 5px solid transparent; /* Efecto de borde al seleccionar */
+    transition: background-color 0.3s, color 0.3s, border-left-color 0.3s; /* Transición suave */
+}
+
+.user-sidebar .sidebar-item:hover {
+    background-color: #ddd;
+    color: #000;
+    border-left-color: #f5db00; /* Color al pasar el mouse */
+}
+
+/* Item de Cerrar Sesión con estilo diferente */
+.user-sidebar .sidebar-logout-item {
+    color: #d9534f; /* Color rojo para el botón de cerrar sesión */
+    font-weight: bold;
+    padding: 12px 16px;
+    margin-top: auto; /* Empuja el botón al final del sidebar */
+    text-align: center;
+    border-left: 5px solid transparent;
+    transition: background-color 0.3s, color 0.3s, border-left-color 0.3s;
+}
+
+.user-sidebar .sidebar-logout-item:hover {
+    background-color: #f2dede; /* Fondo rojo claro al pasar el mouse */
+    color: #a94442;
+    border-left-color: #d9534f;
+}
+
+/* Columna de Contenido Principal */
+.user-content-area {
+    background-color: white; /* Fondo blanco para el área de contenido */
+    overflow-y: auto; /* Importante: scroll vertical si el contenido excede la altura */
+    padding: 20px; /* Padding para el contenido */
+    border-bottom-right-radius: 15px; /* Redondear la esquina inferior derecha si la tarjeta tiene border-radius */
+}
+
+/* Asegurarse que el row dentro de main-card ocupe toda la altura restante */
+.main-card > .row {
+    height: calc(100% - 60px); /* Aproximadamente la altura de la navbar. Ajusta si la navbar es de altura fija */
+    /* O simplemente flex-grow: 1 como ya está, si la altura de la navbar es variable */
+}
+
+/* Estilos específicos para las tarjetas del Dashboard */
+
+
+.dashboard-card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    /* margin-bottom: 20px; ya está en w3-margin-bottom */
+}
+
+.dashboard-card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #182052; /* Color de tu tema */
+}
+
+.dashboard-card p,
+.dashboard-card ul {
+    font-size: 15px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.dashboard-card ul {
+    list-style: none; /* Eliminar viñetas predeterminadas */
+    padding: 0;
+}
+
+.dashboard-card ul li {
+    padding: 5px 0;
+    border-bottom: 1px dashed #eee; /* Línea de puntos para separar ítems */
+}
+
+.dashboard-card ul li:last-child {
+    border-bottom: none; /* No hay línea en el último elemento */
+}
+
+.dashboard-card .w3-badge {
+    margin-right: 8px;
+}
+
+/* Colores para los íconos del dashboard (ejemplo, puedes personalizar) */
+.w3-text-theme {
+    color: #182052 !important; /* Tu color principal */
+}
+
+/* Hover effect for dashboard cards */
+.dashboard-card:hover {
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2); /* Sombra más pronunciada al pasar el mouse */
+}
+/* Estilos para la sección Explorar Libros */
+
+
+/* Estilo para las tarjetas de libro */
+.book-card {
+    height: 100%; /* Asegura que la tarjeta ocupe toda la altura de su columna */
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: #ffffff;
+    /* Ya tiene d-flex flex-column para el layout interno */
+}
+
+.book-card .book-cover {
+    width: 100%; /* La imagen ocupa todo el ancho de la tarjeta */
+    height: 200px; /* Altura fija para la imagen de portada */
+    object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
+    border-bottom: 1px solid #eee; /* Separador sutil */
+}
+
+.book-card h4 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #182052; /* Tu color de tema */
+    margin-bottom: 5px;
+    line-height: 1.3; /* Para títulos largos */
+}
+
+.book-card p.w3-small {
+    font-size: 13px;
+    margin-bottom: 3px;
+}
+
+.book-card .w3-text-yellow {
+    color: #FFC107 !important; /* Color para las estrellas */
+}
+
+/* Ajuste para el botón de búsqueda en dispositivos pequeños */
+.w3-margin-top-small {
+    margin-top: 8px !important; /* Espacio extra en pantallas pequeñas */
+}
+/* Estilos específicos para la sección Mis Libros */
+
+/* Ajustes para los botones dentro de las tarjetas de Mis Libros */
+.book-card .w3-button.w3-margin-right { /* Para el botón "Continuar" */
+    margin-right: 5px; /* Espacio entre los dos botones */
+}
+/* Estilos para la sección de Configuración */
+.user-settings-section .w3-card {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.user-settings-section .w3-border-bottom {
+    border-bottom: 1px solid #ddd !important;
+    padding-bottom: 8px;
+    margin-bottom: 16px;
+}
+
+.user-settings-section label {
+    display: block; /* Asegura que la etiqueta esté en su propia línea */
+    margin-bottom: 5px;
+    font-weight: bold; /* Hace las etiquetas más visibles */
+}
+
+/* Ajustes para los inputs del formulario */
+.user-settings-section .w3-input {
+    padding: 10px;
+    font-size: 16px;
+}
+
+

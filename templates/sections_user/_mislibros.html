@@ -1,0 +1,65 @@
+<div class="w3-container w3-padding-16 user-mybooks-section">
+
+    <div class="w3-row-padding d-flex align-items-stretch" id="myBooksGrid">
+        <div class="w3-col l3 m4 s6 w3-margin-bottom">
+            <div class="w3-card w3-round-large w3-hover-shadow book-card d-flex flex-column">
+                <img src="static/images/portada_libro_150px200px (1).png" alt="Portada del Libro" class="w3-image w3-round-large book-cover">
+                <div class="w3-container w3-padding-small flex-grow-1">
+                    <h4 class="w3-text-theme w3-margin-top-small"><b>Programación Python</b></h4>
+                    <p class="w3-text-grey w3-small">Pedro Peréz</p>
+                    <p class="w3-text-blue w3-small">Programación</p>
+                    <div class="w3-tiny w3-text-yellow">
+                        <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-alt"></i> (4.7)
+                    </div>
+                </div>
+                <div class="w3-container w3-center w3-padding-small w3-margin-top-auto">
+                    <button class="w3-button w3-red w3-round-xxlarge w3-small">Eliminar</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="w3-col l3 m4 s6 w3-margin-bottom">
+            <div class="w3-card w3-round-large w3-hover-shadow book-card d-flex flex-column">
+                <img src="static/images/portada_libro_150px200px (3).png" alt="Portada del Libro" class="w3-image w3-round-large book-cover">
+                <div class="w3-container w3-padding-small flex-grow-1">
+                    <h4 class="w3-text-theme w3-margin-top-small"><b>Fundamentos de Algoritmos</b></h4>
+                    <p class="w3-text-grey w3-small">Luis Jaimez</p>
+                    <p class="w3-text-blue w3-small">Informática</p>
+                    <div class="w3-tiny w3-text-yellow">
+                        <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> (5.0)
+                    </div>
+                </div>
+                <div class="w3-container w3-center w3-padding-small w3-margin-top-auto">
+                    <button class="w3-button w3-red w3-round-xxlarge w3-small">Eliminar</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="noBooksMessage" class="w3-center w3-padding-32 w3-text-grey" style="display: none;">
+            <h3>Aún no tienes libros en esta sección.</h3>
+            <p>¡Explora nuestra biblioteca para encontrar tu próxima lectura!</p>
+            <button class="w3-button w3-dark-grey w3-round-xxlarge w3-large w3-margin-top" onclick="loadContent('_Explorarlibros.html')">
+                Explorar Biblioteca
+            </button>
+        </div>
+        
+    </div>
+    <div class="w3-center w3-margin-top">
+        <div class="w3-bar w3-border w3-round-large">
+            <a href="#" class="w3-bar-item w3-button w3-hover-dark-grey">&laquo;</a>
+            <a href="#" class="w3-bar-item w3-button w3-dark-grey">1</a>
+            <a href="#" class="w3-bar-item w3-button w3-hover-dark-grey">2</a>
+            <a href="#" class="w3-bar-item w3-button w3-hover-dark-grey">&raquo;</a>
+        </div>
+    </div>
+    </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // En un escenario real, aquí cargarías los libros del usuario desde el servidor.
+        // Por ahora, el mensaje "noBooksMessage" está oculto por defecto porque hay ejemplos.
+        // Si no hubiera libros, podrías hacer:
+        // document.getElementById('myBooksGrid').style.display = 'none';
+        // document.getElementById('noBooksMessage').style.display = 'block';
+    });
+</script>

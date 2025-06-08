@@ -1,0 +1,61 @@
+<div class="w3-container w3-padding-16 user-profile-section">
+
+    <div class="w3-card w3-round-large w3-margin-bottom w3-padding">
+        <h3 class="w3-text-theme w3-border-bottom w3-border-light-grey w3-padding-small">Información Personal</h3>
+        <div class="w3-row-padding w3-margin-top">
+            <div class="w3-col m6">
+                <p><strong>Nombre:</strong> <span id="profileName">Usuario de Prueba</span></p>
+                <p><strong>Correo Electrónico:</strong> <span id="profileEmail">usuario@example.com</span></p>
+                <p><strong>Rol:</strong> <span id="profileRole">Miembro</span></p>
+            </div>
+            <div class="w3-col m6 w3-center">
+                <button class="w3-button w3-round-xxlarge w3-medium w3-margin-top boton-2" onclick="editProfile()">Editar Perfil</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="w3-card w3-round-large w3-margin-bottom w3-padding">
+        <h3 class="w3-text-theme w3-border-bottom w3-border-light-grey w3-padding-small">Estadísticas de Actividad</h3>
+        <div class="w3-row-padding w3-margin-top w3-center">
+            <div class="w3-col l4 m4 s12 w3-margin-bottom">
+                <div class="w3-card w3-round-large w3-padding-large w3-light-grey">
+                    <i class="fa fa-book-reader w3-jumbo w3-text-theme"></i>
+                    <p class="w3-large w3-text-dark-grey"><strong>15</strong></p>
+                    <p class="w3-text-grey">Libros Leídos</p>
+                </div>
+            </div>
+            <div class="w3-col l4 m4 s12 w3-margin-bottom">
+                <div class="w3-card w3-round-large w3-padding-large w3-light-grey">
+                    <i class="fa fa-download w3-jumbo w3-text-theme"></i>
+                    <p class="w3-large w3-text-dark-grey"><strong>20</strong></p>
+                    <p class="w3-text-grey">Descargas</p>
+                </div>
+            </div>
+            <div class="w3-col l4 m4 s12 w3-margin-bottom">
+                <div class="w3-card w3-round-large w3-padding-large w3-light-grey">
+                    <i class="fa fa-star w3-jumbo w3-text-theme"></i>
+                    <p class="w3-large w3-text-dark-grey"><strong>5</strong></p>
+                    <p class="w3-text-grey">Reseñas Publicadas</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // En una aplicación real, esta información se cargaría desde el servidor (Flask)
+        // Por ejemplo, usando Jinja2 si pasas el objeto 'user' desde Flask:
+        // document.getElementById('profileName').textContent = "{{ user.nombre | default('Usuario de Prueba') }}";
+        // document.getElementById('profileEmail').textContent = "{{ user.email | default('usuario@example.com') }}";
+        // document.getElementById('profileRole').textContent = "{{ user.rol | default('Miembro') }}";
+        // Si hay una imagen de perfil, también la cargarías:
+        // document.querySelector('.user-profile-section img').src = "{{ user.avatar_url | default('https://via.placeholder.com/150x150?text=Avatar') }}";
+    });
+
+    function editProfile() {
+        alert('Funcionalidad de edición de perfil (se implementará con el backend).');
+        // Aquí iría la lógica para abrir un modal de edición o redirigir a una página de edición
+    }
+</script>

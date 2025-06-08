@@ -1,0 +1,56 @@
+<div class="w3-container w3-padding-16 user-dashboard-section">
+    <h2 class="w3-text-dark-grey w3-margin-bottom">¡Bienvenido/a a la Biblioteca Virtual, <span id="dashboardUserName">Usuario</span>!</h2>
+
+    <div class="w3-row-padding w3-margin-top d-flex align-items-stretch"> 
+        
+        <div class="w3-col l4 m6 s12 w3-margin-bottom">
+            <div class="w3-card w3-round-large w3-hover-shadow dashboard-card d-flex flex-column w3-center w3-padding-32"> 
+                <div class="flex-grow-1 justify-content-center align-items-center"> 
+                    <i class="fa fa-book w3-margin-right"></i>
+                    <h4 class="w3-text-theme"> Continuar Leyendo</h4>
+                    <p class="w3-text-grey"> Retoma tus lecturas:</p>
+                </div>
+                <div class="w3-container w3-padding-small w3-margin-top-auto"> 
+                    <button class="w3-button w3-round-xxlarge w3-medium boton-2">Retomar Lectura</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="w3-col l4 m6 s12 w3-margin-bottom">
+            <div class="w3-card w3-round-large w3-hover-shadow dashboard-card d-flex flex-column w3-center w3-padding-32">
+                <div class="flex-grow-1 justify-content-center align-items-center"> 
+                    <i class="fa fa-download w3-margin-right"></i>
+                    <h4 class="w3-text-theme">Últimas Descargas</h4>
+                    <p class="w3-text-grey">Visita tus ultimas lecturas:</p>
+                </div>
+                <div class="w3-container w3-padding-small w3-margin-top-auto"> 
+                    <button class="w3-button w3-round-xxlarge w3-medium boton-2">Ver Todas</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="w3-col l4 m6 s12 w3-margin-bottom">
+            <div class="w3-card w3-round-large w3-hover-shadow dashboard-card d-flex flex-column w3-center w3-padding-32">
+                <div class="flex-grow-1 justify-content-center align-items-center"> 
+                    <i class="fa fa-chart-bar w3-large w3-text-theme"></i>
+                    <h4 class="w3-text-theme">Tu Actividad</h4>
+                    <p class="w3-text-grey">Controla tus lecturas:</p>
+                </div>
+                <div class="w3-container w3-padding-small w3-margin-top-auto"> 
+                    <button class="w3-button w3-round-xxlarge w3-medium boton-2">Ver Historial</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const userNameSpan = document.getElementById('dashboardUserName');
+        // Esto es un placeholder. En una aplicación real, el nombre del usuario
+        // se enviaría desde el servidor (Flask) y se insertaría aquí.
+        // Por ejemplo, si tienes una variable de Flask:
+        // userNameSpan.textContent = "{{ user_name | default('Usuario') }}";
+    });
+</script>
