@@ -9,135 +9,209 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+
+    <style>
+    @font-face {
+            font-family: 'OriginTech';
+            src: url('fonts/OriginTech.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            background-image: url('images/bkg_book.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .biblio-font{
+            font-family: 'OriginTech', Arial, sans-serif;
+            color: #333;
+            font-size: 2rem;
+            letter-spacing: 2px;
+        }
+        .biblio-banner {
+            background: linear-gradient(90deg,#adebb3 0%, #5de0e6 100%);            
+            padding: 1.5rem 0;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+    </style>
 </head>
 
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <i class="fas fa-book-reader"></i> Biblioteca Virtual UNETI
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="libros.html"><i class="fas fa-book"></i> Libros</a></li>
-                    <li class="nav-item"><a class="nav-link" href="autores.html"><i class="fas fa-user"></i> Autores</a></li>
-                    <li class="nav-item"><a class="nav-link" href="editoriales.html"><i class="fas fa-building"></i> Editoriales</a></li>
-                    <li class="nav-item"><a class="nav-link" href="generos.html"><i class="fas fa-layer-group"></i> Géneros</a></li>
-                    <li class="nav-item"><a class="nav-link" href="micuenta.hmtl"><i class="fas fa-lightbulb text-warning"></i> Mi Cuenta</a></li>
-                </ul>
+    <div class="container bg-light rounded p-2 my-5" style="min-height: calc(100vh - 2 * 3rem); display: flex; flex-direction: column;">
+        <!-- Fila superior: Navbar o encabezado -->
+        <div class="biblio-banner biblio-font mb-2">
+            <div class="d-flex align-items-center justify-content-center">
+                <img src="images/uneti_logo.png" alt="Logo Uneti" style="height:48px; width:auto; margin-right: 16px;">
+                <h2 class="mb-0">BIBLIOTECA VIRTUAL</h2>
             </div>
         </div>
-    </nav>
-    <!-- Libros Section -->
-    <section class="container my-5">
-        <h2 class="mb-4 text-center"><i class="fas fa-book"></i> Libros Disponibles</h2>
-        <div class="row row-cols-1 row-cols-md-3 g-4">
-            <!-- Libro 1 -->
-            <div class="col">
-                <div class="card h-100 shadow-sm text-center">
-                    <i class="fas fa-book fa-2xl mt-4"></i>
-                    <div class="card-body">
-                        <h5 class="card-title">Cien Años de Soledad</h5>
-                        <p class="card-text">Gabriel García Márquez</p>
-                        <span class="badge bg-success mb-2">Novela</span>
-                        <p class="card-text small">Una obra maestra de la literatura latinoamericana que narra la
-                            historia de la familia Buendía.</p>
-                        <a href="#" class="btn btn-primary btn-sm"><i class="fas fa-book-open"></i> Leer</a>
-                        <a href="#" class="btn btn-outline-secondary btn-sm"><i class="fas fa-download"></i>
-                            Descargar</a>
+        <!-- Fila principal: Dos columnas -->
+        <div class="row flex-grow-1" style="flex: 1 1 auto;">
+            <div class="col-md-4 d-flex">
+                <!-- Contenido de la primera columna (menú) -->
+                <div class="d-flex flex-column h-100 w-100 p-3 text-center">
+                    <div>
+                        <ul class="list-unstyled">
+                            <li class="mb-3">
+                                <a href="home.html" class="btn btn-outline-success biblio-banner w-100 py-2 d-flex align-items-center justify-content-center fw-bold shadow-sm">
+                                    <i class="fas fa-home me-2"></i> Inicio
+                                </a>
+                            </li>
+                            <li class="mb-3">
+                                <a href="libros.html" class="btn btn-outline-success biblio-banner w-100 py-2 d-flex align-items-center justify-content-center fw-bold shadow-sm active">
+                                    <i class="fas fa-book me-2"></i> Libros
+                                </a>
+                            </li>
+                            <li class="mb-3">
+                                <a href="autores.html" class="btn btn-outline-success biblio-banner w-100 py-2 d-flex align-items-center justify-content-center fw-bold shadow-sm">
+                                    <i class="fas fa-user-edit me-2"></i> Autores
+                                </a>
+                            </li>
+                            <li class="mb-3">
+                                <a href="generos.html" class="btn btn-outline-success biblio-banner w-100 py-2 d-flex align-items-center justify-content-center fw-bold shadow-sm">
+                                    <i class="fas fa-tags me-2"></i> Géneros
+                                </a>
+                            </li>
+                            <li class="mb-3">
+                                <a href="editoriales.html" class="btn btn-outline-success biblio-banner w-100 py-2 d-flex align-items-center justify-content-center fw-bold shadow-sm">
+                                    <i class="fas fa-building me-2"></i> Editoriales
+                                </a>
+                            </li>
+                            <li class="mb-3">
+                                <a href="perfil.html" class="btn btn-outline-success biblio-banner w-100 py-2 d-flex align-items-center justify-content-center fw-bold shadow-sm">
+                                    <i class="fas fa-user-circle me-2"></i> Mi Perfil
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-auto">
+                        <small class="mb-0">Diseñado por el Grupo 1.<br>
+                            Karla Pastran v-21.071.898<br>
+                            Erick Diaz v-20.482.911<br>
+                            Andrés Martínez v-27.796.218<br>
+                        </small>
                     </div>
                 </div>
             </div>
-            <!-- Libro 2 -->
-            <div class="col">
-                <div class="card h-100 shadow-sm text-center">
-                    <i class="fas fa-book fa-2xl mt-4"></i>
-                    <div class="card-body">
-                        <h5 class="card-title">El Principito</h5>
-                        <p class="card-text">Antoine de Saint-Exupéry</p>
-                        <span class="badge bg-warning text-dark mb-2">Fábula</span>
-                        <p class="card-text small">Un clásico universal sobre la inocencia, la amistad y el sentido de
-                            la vida.</p>
-                        <a href="#" class="btn btn-primary btn-sm"><i class="fas fa-book-open"></i> Leer</a>
-                        <a href="#" class="btn btn-outline-secondary btn-sm"><i class="fas fa-download"></i>
-                            Descargar</a>
+            <div class="col-md-8 d-flex">
+                <!-- Contenido de la segunda columna (contenido principal) -->
+                <div class="p-4 rounded bg-white h-100 w-100 d-flex flex-column justify-content-center align-items-center">
+                    <!-- Barra de búsqueda y filtros -->
+                    <div class="w-100 mb-4">
+                        <form class="row g-2 align-items-center">
+                            <div class="col-md-5">
+                                <div class="input-group">
+                                    <span class="input-group-text bg-success text-white"><i class="fas fa-search"></i></span>
+                                    <input type="text" class="form-control" placeholder="Buscar libro, autor o ISBN">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <select class="form-select">
+                                    <option selected>Género</option>
+                                    <option>Ficción</option>
+                                    <option>No Ficción</option>
+                                    <option>Tecnología</option>
+                                    <option>Ciencia</option>
+                                </select>
+                            </div>
+                            <div class="col-md-2">
+                                <select class="form-select">
+                                    <option selected>Editorial</option>
+                                    <option>Alfa</option>
+                                    <option>Beta</option>
+                                    <option>Gamma</option>
+                                </select>
+                            </div>
+                            <div class="col-md-2">
+                                <select class="form-select">
+                                    <option selected>Año</option>
+                                    <option>2025</option>
+                                    <option>2024</option>
+                                    <option>2023</option>
+                                </select>
+                            </div>
+                        </form>
                     </div>
-                </div>
-            </div>
-            <!-- Libro 3 -->
-            <div class="col">
-                <div class="card h-100 shadow-sm text-center">
-                    <i class="fas fa-book fa-2xl mt-4"></i>
-                    <div class="card-body">
-                        <h5 class="card-title">Don Quijote de la Mancha</h5>
-                        <p class="card-text">Miguel de Cervantes</p>
-                        <span class="badge bg-info text-dark mb-2">Clásico</span>
-                        <p class="card-text small">La historia del ingenioso hidalgo y sus aventuras por la Mancha.</p>
-                        <a href="#" class="btn btn-primary btn-sm"><i class="fas fa-book-open"></i> Leer</a>
-                        <a href="#" class="btn btn-outline-secondary btn-sm"><i class="fas fa-download"></i>
-                            Descargar</a>
+                    <!-- Estadísticas rápidas -->
+                    <div class="row w-100 mb-4">
+                        <div class="col-6 col-lg-3 mb-3">
+                            <div class="card shadow-sm border-0 text-center h-100">
+                                <div class="card-body">
+                                    <i class="fas fa-book fa-2x text-success mb-2"></i>
+                                    <h6 class="card-title mb-1">Total Libros</h6>
+                                    <p class="card-text fs-5 fw-bold">1,250</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-lg-3 mb-3">
+                            <div class="card shadow-sm border-0 text-center h-100">
+                                <div class="card-body">
+                                    <i class="fas fa-star fa-2x text-warning mb-2"></i>
+                                    <h6 class="card-title mb-1">Nuevos</h6>
+                                    <p class="card-text fs-5 fw-bold">8</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-lg-3 mb-3">
+                            <div class="card shadow-sm border-0 text-center h-100">
+                                <div class="card-body">
+                                    <i class="fas fa-tags fa-2x text-info mb-2"></i>
+                                    <h6 class="card-title mb-1">Géneros</h6>
+                                    <p class="card-text fs-5 fw-bold">22</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-lg-3 mb-3">
+                            <div class="card shadow-sm border-0 text-center h-100">
+                                <div class="card-body">
+                                    <i class="fas fa-user-edit fa-2x text-primary mb-2"></i>
+                                    <h6 class="card-title mb-1">Autores</h6>
+                                    <p class="card-text fs-5 fw-bold">15</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <!-- Libro 4 -->
-            <div class="col">
-                <div class="card h-100 shadow-sm text-center">
-                    <i class="fas fa-book fa-2xl mt-4"></i>
-                    <div class="card-body">
-                        <h5 class="card-title">Rayuela</h5>
-                        <p class="card-text">Julio Cortázar</p>
-                        <span class="badge bg-secondary mb-2">Novela</span>
-                        <p class="card-text small">Una novela innovadora que invita al lector a elegir su propio camino de lectura.</p>
-                        <a href="#" class="btn btn-primary btn-sm"><i class="fas fa-book-open"></i> Leer</a>
-                        <a href="#" class="btn btn-outline-secondary btn-sm"><i class="fas fa-download"></i> Descargar</a>
-                    </div>
-                </div>
-            </div>
-            <!-- Libro 5 -->
-            <div class="col">
-                <div class="card h-100 shadow-sm text-center">
-                    <i class="fas fa-book fa-2xl mt-4"></i>
-                    <div class="card-body">
-                        <h5 class="card-title">Pedro Páramo</h5>
-                        <p class="card-text">Juan Rulfo</p>
-                        <span class="badge bg-danger mb-2">Realismo Mágico</span>
-                        <p class="card-text small">Un viaje al pueblo de Comala en busca de un padre y de respuestas existenciales.</p>
-                        <a href="#" class="btn btn-primary btn-sm"><i class="fas fa-book-open"></i> Leer</a>
-                        <a href="#" class="btn btn-outline-secondary btn-sm"><i class="fas fa-download"></i> Descargar</a>
-                    </div>
-                </div>
-            </div>
-            <!-- Libro 6 -->
-            <div class="col">
-                <div class="card h-100 shadow-sm text-center">
-                    <i class="fas fa-book fa-2xl mt-4"></i>
-                    <div class="card-body">
-                        <h5 class="card-title">La Casa de los Espíritus</h5>
-                        <p class="card-text">Isabel Allende</p>
-                        <span class="badge bg-success mb-2">Novela</span>
-                        <p class="card-text small">Una saga familiar marcada por el amor, la política y lo sobrenatural en Chile.</p>
-                        <a href="#" class="btn btn-primary btn-sm"><i class="fas fa-book-open"></i> Leer</a>
-                        <a href="#" class="btn btn-outline-secondary btn-sm"><i class="fas fa-download"></i> Descargar</a>
+                    <!-- Lista de libros destacados -->
+                    <div class="w-100">
+                        <h5 class="mb-3"><i class="fas fa-book-open text-success"></i> Libros Destacados</h5>
+                        <div class="list-group">
+                            <a href="#" class="list-group-item list-group-item-action d-flex align-items-center">
+                                <i class="fas fa-book text-success me-3"></i>
+                                <div>
+                                    <div class="fw-bold">Introducción a la Inteligencia Artificial</div>
+                                    <small class="text-muted">María López &middot; 2025 &middot; Tecnología</small>
+                                </div>
+                                <span class="badge bg-success ms-auto">Nuevo</span>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action d-flex align-items-center">
+                                <i class="fas fa-book text-primary me-3"></i>
+                                <div>
+                                    <div class="fw-bold">Historia de la Tecnología</div>
+                                    <small class="text-muted">Juan Pérez &middot; 2024 &middot; Historia</small>
+                                </div>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action d-flex align-items-center">
+                                <i class="fas fa-book text-warning me-3"></i>
+                                <div>
+                                    <div class="fw-bold">Cálculo para Ingenieros</div>
+                                    <small class="text-muted">Ana Torres &middot; 2023 &middot; Matemáticas</small>
+                                </div>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</body>
 
-    <!-- Footer -->
-    <footer class="bg-primary text-white text-center py-3">
-        <div class="container">
-            <small>&copy; 2024 Biblioteca Virtual. Todos los derechos reservados.</small>
-        </div>
-    </footer>
-
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
