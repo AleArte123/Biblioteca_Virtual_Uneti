@@ -1,0 +1,112 @@
+/*
+    -----------------------------------------------------
+    Archivo: style_user.css
+    Descripción: Hoja de estilos principal para seccion usuario la Biblioteca Virtual UNETI.
+    Contiene estilos generales, tipografía, layout y componentes UI.
+    -----------------------------------------------------
+*/
+
+@font-face {
+            font-family: 'OriginTech';
+            src: url('../fonts/OriginTech.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+/*
+    Estilos para el cuerpo del documento (body):
+    Configura una imagen de fondo que cubre toda la pantalla y es fija.
+    También se añaden estilos para asegurar que el cuerpo ocupe al menos
+    toda la altura del viewport y se eliminan márgenes/paddings predeterminados.
+*/
+        body {
+            background-image: url('../images/bkg_book.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+/*
+    Estilos para la tarjeta principal:
+    Configura el color de fondo que cubre toda la tarjeta y es fija.
+*/
+        .w3-card-main {
+            background-color: white;
+            width: 90%;
+            max-width: 1400px;
+            max-height: 600px;
+            display: flex;
+            flex-direction: column;
+            border-radius: 15px;
+
+        }
+
+/*
+    Clase para banners y sus elementos:
+    Define un color solido de fondo, padding, bordes redondeados y una sombra sutil.
+    Esta clase se usa en el encabezado principal.
+*/          
+        .biblio-banner {
+            background-image: linear-gradient(#ADEBB3, white);
+            padding: 1.5rem 0;
+            border-radius: 0.8rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        } 
+        
+        .title-banner{
+            font-family: 'OriginTech', Arial, sans-serif;
+            color: #090933;
+            font-size: 2rem;
+            letter-spacing: 2px;
+        }
+    
+
+        .logo-uneti{
+            height:48px; 
+            width:auto; 
+            margin-right: 16px
+        }
+
+/*
+    Clase para botones:
+    Define un color solido de fondo, padding, bordes redondeados y una sombra sutil.
+    Esta clase se usa en los botones de navegación dentro de la tarjeta.
+    Columna lado Derecha y Contenido.
+*/ 
+        .boton-navegacion{
+            background-color: #ADEBB3;
+            padding: 1.5rem 0;
+            border-radius: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .boton-logout {
+            background-color: #f2dede;
+            color: #a94442;
+            border-color: #a94442;
+            padding: 1.5rem 0;
+            border-radius: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: background-color 0.3s, color 0.3s, border-left-color 0.3s;
+        }
+
+        .boton-contenido{
+            padding: 1.5rem 0;
+            border-radius: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+/*
+    Clase para Ventanas emergentes:
+    Seccion Mi perfil .....
+    Estilos para los títulos de los modales
+    Estilos para el gradiente de fondo en los encabezados de los modales
+*/ 
+        .modal-header{
+        background-image: linear-gradient(#ADEBB3, white);
+        }
+
+        .modal-title{
+            font-family: Arial, sans-serif; 
+            color: #090933;
+        }
+

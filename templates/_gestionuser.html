@@ -1,0 +1,368 @@
+<h4 class="mb-4"><i class="fas fa-users-cog text-info"></i> Gestión de Usuarios</h4>
+
+<div class="card shadow-sm mb-4">
+    <div class="card-body">
+        <h5 class="card-title border-bottom pb-2 mb-3" style="color: #090933;">Control de Usuarios</h5>
+        <p>Administra las cuentas de usuario, sus roles y estados.</p>
+        <div class="d-flex gap-2 mb-4">
+            <button class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#addUserModal">
+                <i class="fas fa-user-plus me-2"></i> Añadir Nuevo Usuario
+            </button>
+            <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#searchUserModal">
+                <i class="fas fa-search me-2"></i> Buscar Usuario
+            </button>
+        </div>
+
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Correo Electrónico</th>
+                        <th>Rol</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>101</td>
+                        <td>Juan Pérez</td>
+                        <td>juan.perez@example.com</td>
+                        <td class="user-role-cell">Miembro</td>
+                        <td class="user-status-cell"><span class="badge bg-success">Activo</span></td>
+                        <td>
+                            <button class="btn btn-sm btn-outline-primary me-1 edit-user-btn table-actions-btn" type="button"
+                                    data-bs-toggle="modal" data-bs-target="#editUserModal"
+                                    data-user-id="101"
+                                    data-user-name="Juan Pérez"
+                                    data-user-email="juan.perez@example.com"
+                                    data-user-role="Miembro"
+                                    data-user-status="Activo">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="btn btn-sm btn-outline-warning me-1 toggle-user-status-btn table-actions-btn" type="button"
+                                    data-user-id="101" data-user-name="Juan Pérez" data-user-status="Activo">
+                                <i class="fas fa-user-slash"></i> Bloquear
+                            </button>
+                            <button class="btn btn-sm btn-outline-danger delete-user-btn table-actions-btn" type="button"
+                                    data-user-id="101" data-user-name="Juan Pérez">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>102</td>
+                        <td>María García</td>
+                        <td>maria.garcia@example.com</td>
+                        <td class="user-role-cell">Miembro</td>
+                        <td class="user-status-cell"><span class="badge bg-success">Activo</span></td>
+                        <td>
+                            <button class="btn btn-sm btn-outline-primary me-1 edit-user-btn table-actions-btn" type="button"
+                                    data-bs-toggle="modal" data-bs-target="#editUserModal"
+                                    data-user-id="102"
+                                    data-user-name="María García"
+                                    data-user-email="maria.garcia@example.com"
+                                    data-user-role="Miembro"
+                                    data-user-status="Activo">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="btn btn-sm btn-outline-warning me-1 toggle-user-status-btn table-actions-btn" type="button"
+                                    data-user-id="102" data-user-name="María García" data-user-status="Activo">
+                                <i class="fas fa-user-slash"></i> Bloquear
+                            </button>
+                            <button class="btn btn-sm btn-outline-danger delete-user-btn table-actions-btn" type="button"
+                                    data-user-id="102" data-user-name="María García">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>103</td>
+                        <td>Carlos Sánchez</td>
+                        <td>carlos.s@example.com</td>
+                        <td class="user-role-cell">Miembro</td>
+                        <td class="user-status-cell"><span class="badge bg-danger">Inactivo</span></td>
+                        <td>
+                            <button class="btn btn-sm btn-outline-primary me-1 edit-user-btn table-actions-btn" type="button"
+                                    data-bs-toggle="modal" data-bs-target="#editUserModal"
+                                    data-user-id="103"
+                                    data-user-name="Carlos Sánchez"
+                                    data-user-email="carlos.s@example.com"
+                                    data-user-role="Miembro"
+                                    data-user-status="Inactivo">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="btn btn-sm btn-outline-success me-1 toggle-user-status-btn table-actions-btn" type="button"
+                                    data-user-id="103" data-user-name="Carlos Sánchez" data-user-status="Inactivo">
+                                <i class="fas fa-user-check"></i> Activar
+                            </button>
+                            <button class="btn btn-sm btn-outline-danger delete-user-btn table-actions-btn" type="button"
+                                    data-user-id="103" data-user-name="Carlos Sánchez">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>104</td>
+                        <td>Ana Gómez</td>
+                        <td>ana.g@example.com</td>
+                        <td class="user-role-cell">Miembro</td>
+                        <td class="user-status-cell"><span class="badge bg-success">Activo</span></td>
+                        <td>
+                            <button class="btn btn-sm btn-outline-primary me-1 edit-user-btn table-actions-btn" type="button"
+                                    data-bs-toggle="modal" data-bs-target="#editUserModal"
+                                    data-user-id="104"
+                                    data-user-name="Ana Gómez"
+                                    data-user-email="ana.g@example.com"
+                                    data-user-role="Miembro"
+                                    data-user-status="Activo">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="btn btn-sm btn-outline-warning me-1 toggle-user-status-btn table-actions-btn" type="button"
+                                    data-user-id="104" data-user-name="Ana Gómez" data-user-status="Activo">
+                                <i class="fas fa-user-slash"></i> Bloquear
+                            </button>
+                            <button class="btn btn-sm btn-outline-danger delete-user-btn table-actions-btn" type="button"
+                                    data-user-id="104" data-user-name="Ana Gómez">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>105</td>
+                        <td>Pedro Ramirez</td>
+                        <td>pedro.r@example.com</td>
+                        <td class="user-role-cell">Miembro</td>
+                        <td class="user-status-cell"><span class="badge bg-success">Activo</span></td>
+                        <td>
+                            <button class="btn btn-sm btn-outline-primary me-1 edit-user-btn table-actions-btn" type="button"
+                                    data-bs-toggle="modal" data-bs-target="#editUserModal"
+                                    data-user-id="105"
+                                    data-user-name="Pedro Ramirez"
+                                    data-user-email="pedro.r@example.com"
+                                    data-user-role="Miembro"
+                                    data-user-status="Activo">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="btn btn-sm btn-outline-warning me-1 toggle-user-status-btn table-actions-btn" type="button"
+                                    data-user-id="105" data-user-name="Pedro Ramirez" data-user-status="Activo">
+                                <i class="fas fa-user-slash"></i> Bloquear
+                            </button>
+                            <button class="btn btn-sm btn-outline-danger delete-user-btn table-actions-btn" type="button"
+                                    data-user-id="105" data-user-name="Pedro Ramirez">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>106</td>
+                        <td>Laura Torres</td>
+                        <td>laura.t@example.com</td>
+                        <td class="user-role-cell">Miembro</td>
+                        <td class="user-status-cell"><span class="badge bg-danger">Inactivo</span></td>
+                        <td>
+                            <button class="btn btn-sm btn-outline-primary me-1 edit-user-btn table-actions-btn" type="button"
+                                    data-bs-toggle="modal" data-bs-target="#editUserModal"
+                                    data-user-id="106"
+                                    data-user-name="Laura Torres"
+                                    data-user-email="laura.t@example.com"
+                                    data-user-role="Miembro"
+                                    data-user-status="Inactivo">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="btn btn-sm btn-outline-success me-1 toggle-user-status-btn table-actions-btn" type="button"
+                                    data-user-id="106" data-user-name="Laura Torres" data-user-status="Inactivo">
+                                <i class="fas fa-user-check"></i> Activar
+                            </button>
+                            <button class="btn btn-sm btn-outline-danger delete-user-btn table-actions-btn" type="button"
+                                    data-user-id="106" data-user-name="Laura Torres">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>107</td>
+                        <td>David Fernandez</td>
+                        <td>david.f@example.com</td>
+                        <td class="user-role-cell">Miembro</td>
+                        <td class="user-status-cell"><span class="badge bg-success">Activo</span></td>
+                        <td>
+                            <button class="btn btn-sm btn-outline-primary me-1 edit-user-btn table-actions-btn" type="button"
+                                    data-bs-toggle="modal" data-bs-target="#editUserModal"
+                                    data-user-id="107"
+                                    data-user-name="David Fernandez"
+                                    data-user-email="david.f@example.com"
+                                    data-user-role="Miembro"
+                                    data-user-status="Activo">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="btn btn-sm btn-outline-warning me-1 toggle-user-status-btn table-actions-btn" type="button"
+                                    data-user-id="107" data-user-name="David Fernandez" data-user-status="Activo">
+                                <i class="fas fa-user-slash"></i> Bloquear
+                            </button>
+                            <button class="btn btn-sm btn-outline-danger delete-user-btn table-actions-btn" type="button"
+                                    data-user-id="107" data-user-name="David Fernandez">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>108</td>
+                        <td>Sofía Castro</td>
+                        <td>sofia.c@example.com</td>
+                        <td class="user-role-cell">Miembro</td>
+                        <td class="user-status-cell"><span class="badge bg-success">Activo</span></td>
+                        <td>
+                            <button class="btn btn-sm btn-outline-primary me-1 edit-user-btn table-actions-btn" type="button"
+                                    data-bs-toggle="modal" data-bs-target="#editUserModal"
+                                    data-user-id="108"
+                                    data-user-name="Sofía Castro"
+                                    data-user-email="sofia.c@example.com"
+                                    data-user-role="Miembro"
+                                    data-user-status="Activo">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="btn btn-sm btn-outline-warning me-1 toggle-user-status-btn table-actions-btn" type="button"
+                                    data-user-id="108" data-user-name="Sofía Castro" data-user-status="Activo">
+                                <i class="fas fa-user-slash"></i> Bloquear
+                            </button>
+                            <button class="btn btn-sm btn-outline-danger delete-user-btn table-actions-btn" type="button"
+                                    data-user-id="108" data-user-name="Sofía Castro">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Ventanas Emergentes -->
+<div class="modal fade" id="addUserModal" tabindex="-1" aria-labelledby="addUserModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addUserModalLabel">Añadir Nuevo Usuario</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="addUserForm">
+                    <div class="mb-3">
+                        <label for="userName" class="form-label">Nombre Completo</label>
+                        <input type="text" class="form-control" id="userName" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="userEmail" class="form-label">Correo Electrónico</label>
+                        <input type="email" class="form-control" id="userEmail" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="userPassword" class="form-label">Contraseña</label>
+                        <input type="password" class="form-control" id="userPassword" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="userRole" class="form-label">Rol</label>
+                        <select class="form-select" id="userRole">
+                            <option value="Miembro">Miembro</option>
+                            <option value="Administrador">Administrador</option>
+                            </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="submit" form="addUserForm" class="btn btn-success">Crear Usuario</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="searchUserModal" tabindex="-1" aria-labelledby="searchUserModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="searchUserModalLabel">Buscar Usuario</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="searchUserForm">
+                    <div class="mb-3">
+                        <label for="searchUserQuery" class="form-label">Buscar por Nombre o Correo</label>
+                        <input type="text" class="form-control" id="searchUserQuery" placeholder="Ej: Juan Pérez, juan.perez@example.com">
+                    </div>
+                    <div class="mb-3">
+                        <label for="searchUserRole" class="form-label">Rol</label>
+                        <select class="form-select" id="searchUserRole">
+                            <option value="">Todos</option>
+                            <option value="Miembro">Miembro</option>
+                            <option value="Administrador">Administrador</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="searchUserStatus" class="form-label">Estado</label>
+                        <select class="form-select" id="searchUserStatus">
+                            <option value="">Todos</option>
+                            <option value="Activo">Activo</option>
+                            <option value="Inactivo">Inactivo</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="submit" form="searchUserForm" class="btn btn-primary">Buscar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="editUserModal" tabindex="-1" aria-labelledby="editUserModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editUserModalLabel">Editar Usuario</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="editUserForm">
+                    <input type="hidden" id="editUserId"> <div class="mb-3">
+                        <label for="editUserName" class="form-label">Nombre Completo</label>
+                        <input type="text" class="form-control" id="editUserName" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="editUserEmail" class="form-label">Correo Electrónico</label>
+                        <input type="email" class="form-control" id="editUserEmail" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="editUserPassword" class="form-label">Nueva Contraseña (opcional)</label>
+                        <input type="password" class="form-control" id="editUserPassword" placeholder="Dejar en blanco para no cambiar">
+                    </div>
+                    <div class="mb-3">
+                        <label for="editUserRole" class="form-label">Rol</label>
+                        <select class="form-select" id="editUserRole">
+                            <option value="Miembro">Miembro</option>
+                            <option value="Administrador">Administrador</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="editUserStatus" class="form-label">Estado</label>
+                        <select class="form-select" id="editUserStatus">
+                            <option value="Activo">Activo</option>
+                            <option value="Inactivo">Inactivo</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="submit" form="editUserForm" class="btn btn-primary">Guardar Cambios</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/script_admin.js"></script>

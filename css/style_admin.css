@@ -1,0 +1,172 @@
+/*
+    -----------------------------------------------------
+    Archivo: style_admin.css
+    Descripción: Hoja de estilos principal para seccion usuario la Biblioteca Virtual UNETI.
+    Contiene estilos generales, tipografía, layout y componentes UI.
+    -----------------------------------------------------
+*/
+
+@font-face {
+            font-family: 'OriginTech';
+            src: url('../fonts/OriginTech.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+/*
+    Estilos para el cuerpo del documento (body):
+    Configura una imagen de fondo que cubre toda la pantalla y es fija.
+    También se añaden estilos para asegurar que el cuerpo ocupe al menos
+    toda la altura del viewport y se eliminan márgenes/paddings predeterminados.
+*/
+
+        body {
+            background-image: url('../images/bkg_book.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+/*
+    Estilos para la tarjeta principal:
+    Configura el color de fondo que cubre toda la tarjeta y es fija.
+*/
+        .w3-card-main {
+            background-color: white;
+            width: 90%;
+            max-width: 1400px;
+            max-height: 600px;
+            display: flex;
+            flex-direction: column;
+            border-radius: 15px;
+
+        }
+
+/*
+    Clase para banners y sus elementos:
+    Define un color solido de fondo, padding, bordes redondeados y una sombra sutil.
+    Esta clase se usa en el encabezado principal.
+*/          
+        .biblio-banner {
+            background-image: linear-gradient(#5de0e6 , white);
+            padding: 1.5rem 0;
+            border-radius: 0.8rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            flex-shrink: 0; /* Evita que el banner se encoja */
+        } 
+        
+        .title-banner{
+            font-family: 'OriginTech', Arial, sans-serif;
+            color: #090933;
+            font-size: 2rem;
+            letter-spacing: 2px;
+        }
+    
+
+        .logo-uneti{
+            height:48px; 
+            width:auto; 
+            margin-right: 16px
+        }
+
+/*
+    Clase para botones:
+    Define un color solido de fondo, padding, bordes redondeados y una sombra sutil.
+    Esta clase se usa en los botones de navegación dentro de la tarjeta.
+    Columna lado Derecha y Contenido.
+*/ 
+        .boton-navegacion{
+            background-color: #a0f7fc ;
+            padding: 1.5rem 0;
+            border-radius: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            color: #090933; /* Color de texto predeterminado */
+            text-decoration: none; /* Elimina el subrayado */
+        }
+        .boton-navegacion:hover {
+            background-color: #8ce1e6; /* Un poco más oscuro al pasar el ratón */
+            color: #090933; /* Asegura que el color de texto se mantenga */
+        }
+        .boton-navegacion.active { /* Estilo para el botón activo */
+            background-color: #5de0e6; /* Color del gradiente del banner */
+            color: white !important; /* Texto blanco para resaltar el activo */
+            border-color: #5de0e6;
+        }
+
+        .boton-logout {
+            background-color: #f2dede;
+            color: #a94442;
+            border-color: #a94442;
+            padding: 1.5rem 0;
+            border-radius: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: background-color 0.3s, color 0.3s, border-left-color 0.3s;
+        }
+        .boton-logout:hover {
+            background-color: #e0b4b4; /* Un tono más oscuro al pasar el ratón */
+            color: #a94442;
+        }
+
+        .boton-contenido{
+            padding: 1.5rem 0;
+            border-radius: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+/*
+    Clase para Ventanas emergentes:
+    Seccion Mi perfil .....
+    Estilos para los títulos de los modales
+    Estilos para el gradiente de fondo en los encabezados de los modales
+*/ 
+        .modal-header{
+            background-image: linear-gradient(#5de0e6 , white);
+        }
+
+        .modal-title{
+            font-family: Arial, sans-serif; /* Asegura que use OriginTech si está disponible */
+            color: #090933;
+        }
+
+/* --- ESTILOS PARA EL CONTENIDO PRINCIPAL SCROLLABLE (COLUMNA DERECHA) --- */
+/* Esta sección es crucial para que el scroll funcione con tus reglas del w3-card-main */
+
+
+.admin-scroll-area {
+    flex-grow: 1; /* Ocupa todo el espacio vertical disponible en su padre .col-md-9 */
+    overflow-y: scroll; /* ¡Aquí es donde la magia sucede! Activa el scroll vertical cuando el contenido desborda */
+    padding-bottom: 1rem; /* Pequeño padding para el final del contenido */
+    max-height: 30rem;
+    min-height: 0;
+
+}
+
+/* Opcional: Estilos para el scrollbar (solo para navegadores que lo soportan bien) */
+.admin-scroll-area::-webkit-scrollbar {
+    width: 8px;
+}
+
+.admin-scroll-area::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.admin-scroll-area::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+.admin-scroll-area::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.table-actions-btn {
+    width: 80px; /* Ajusta este valor según necesites para que quepan todos los iconos y textos */
+    height: 25px;
+    text-align: center; /* Centra el contenido (texto/icono) dentro del botón */
+    display: inline-flex; /* Permite usar align-items y justify-content */
+    align-items: center; /* Centra verticalmente los elementos dentro del botón */
+    justify-content: center; /* Centra horizontalmente los elementos dentro del botón */
+}
+
+
+

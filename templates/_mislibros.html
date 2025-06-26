@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Libros - Biblioteca Virtual</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <link rel="stylesheet" href="../css/style_user.css"> 
+
+</head>
+<body>
+    <div class="container-fluid vh-100 d-flex justify-content-center align-items-center">
+        <div class="w3-card-main">
+        
+            <div class="biblio-banner mb-2">
+                <div class="d-flex align-items-center justify-content-center">
+                    <img class="logo-uneti" src="../images/uneti_logo.png" alt="Logo Uneti">
+                    <h2 class="title-banner">BIBLIOTECA VIRTUAL</h2>
+                </div>
+            </div>
+        
+            <div class="row flex-grow-1" style="flex: 1 1 auto;">
+                <div class="col-md-3 d-flex">
+                    
+                    <div class="d-flex flex-column h-100 w-100 p-3 text-center">
+                        <div>
+                            <ul class="list-unstyled">
+                                <li class="mb-3">
+                                    <a href="./user.html" class="btn btn-outline-success boton-navegacion w-100 py-2 d-flex align-items-center justify-content-center fw-bold shadow-sm">
+                                        <i class="fas fa-home me-2"></i> Inicio
+                                    </a>
+                                </li>
+                                <li class="mb-3">
+                                    <a href="./_explorarlibros.html" class="btn btn-outline-success boton-navegacion w-100 py-2 d-flex align-items-center justify-content-center fw-bold shadow-sm">
+                                        <i class="fas fa-book me-2"></i> Explorar Libros
+                                    </a>
+                                </li>
+                                <li class="mb-3">
+                                    <a href="./_mislibros.html" class="btn btn-success boton-navegacion w-100 py-2 d-flex align-items-center justify-content-center fw-bold shadow-sm active">
+                                        <i class="fas fa-user-edit me-2"></i> Mis Libros
+                                    </a>
+                                </li>
+                                <li class="mb-3">
+                                    <a href="../templates/_miperfil.html" class="btn btn-outline-success boton-navegacion w-100 py-2 d-flex align-items-center justify-content-center fw-bold shadow-sm">
+                                        <i class="fas fa-tags me-2"></i> Mi perfil 
+                                    </a>
+                                </li>
+            
+                                <li class="mb-3">
+                                    <a href="../perfil.html" class="btn btn-danger boton-logout w-100 py-2 d-flex align-items-center justify-content-center fw-bold shadow-sm">
+                                        <i class="fas fa-user-circle me-2"></i> Cerrar Sesión 
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="mt-auto">
+                            <small class="mb-0">Diseñado por el Grupo 1 © 2025 <br>
+                                            Programación 1 M2 <br>
+                            
+                        </small>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="col-md-9 d-flex">
+                    <div class="p-4 rounded bg-white h-100 w-100 d-flex flex-column">
+                        <h4 class="mb-4"><i class="fas fa-bookmark text-success"></i> Mis Libros Guardados</h4>
+                        
+                        <div id="myBooksList" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 overflow-auto">
+                            <p class="text-muted text-center w-100">Cargando tus libros...</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+                    
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const myBooksListContainer = document.getElementById('myBooksList');
+        myBooksListContainer.innerHTML = ''; // Limpiar el mensaje de "Cargando..."
+
+        let myBooks = JSON.parse(localStorage.getItem('myBooks')) || [];
+
+        if (myBooks.length > 0) {
+            myBooks.forEach(book => {
+                const bookCard = document.createElement('div');
+                bookCard.classList.add('col');
+                bookCard.innerHTML = `
+                    <div class="card h-100 shadow-sm">
+                        <div class="row g-0">
+                            <div class="col-4 d-flex align-items-center justify-content-center p-2">
+                                <img src="${book.cover}" class="img-fluid rounded-start" alt="Portada de ${book.title}" style="max-height: 120px; object-fit: contain;">
+                            </div>
+                            <div class="col-8">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title mb-1">${book.title}</h5>
+                                    <p class="card-text mb-1"><small class="text-muted">Autor: ${book.author}</small></p>
+                                    <p class="card-text mb-1"><small class="text-muted">Categoría: ${book.category}</small></p>
+                                    <div class="card-text mb-2">
+                                        Calificación: 
+                                        ${generateStarsHtml(book.rating)}
+                                    </div>
+                                    <div class="mt-auto d-flex justify-content-between">
+                                        <button class="btn btn-sm btn-outline-primary read-book-btn" data-book-id="${book.id}">Leer</button>
+                                        <button class="btn btn-sm btn-outline-danger remove-book-btn" data-book-id="${book.id}">Eliminar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                myBooksListContainer.appendChild(bookCard);
+            });
+
+            // Añadir event listeners para los botones de "Eliminar"
+            myBooksListContainer.addEventListener('click', function(event) {
+                if (event.target.classList.contains('remove-book-btn')) {
+                    const bookIdToRemove = event.target.dataset.bookId;
+                    removeBookFromMyBooks(bookIdToRemove);
+                }
+                // Aquí puedes añadir la lógica para 'Leer' si es necesaria
+                if (event.target.classList.contains('read-book-btn')) {
+                    const bookIdToRead = event.target.dataset.bookId;
+                    // Aquí iría la lógica para leer el libro, quizás abrirlo en una nueva pestaña o un visor
+                    alert(`Simulando la lectura del libro con ID: ${bookIdToRead}`);
+                }
+            });
+
+        } else {
+            myBooksListContainer.innerHTML = "<p class='text-muted text-center w-100'>No tienes ningún libro añadido a tu lista todavía. ¡Explora y añade algunos!</p>";
+        }
+
+        // Función auxiliar para generar HTML de estrellas
+        function generateStarsHtml(rating) {
+            let starsHtml = '';
+            const floatRating = parseFloat(rating);
+            const fullStars = Math.floor(floatRating);
+            const hasHalfStar = floatRating % 1 >= 0.5;
+
+            for (let i = 0; i < fullStars; i++) {
+                starsHtml += '<i class="fas fa-star text-warning"></i>';
+            }
+            if (hasHalfStar) {
+                starsHtml += '<i class="fas fa-star-half-alt text-warning"></i>';
+            }
+            for (let i = 0; i < (5 - fullStars - (hasHalfStar ? 1 : 0)); i++) {
+                starsHtml += '<i class="far fa-star text-warning"></i>';
+            }
+            return starsHtml;
+        }
+
+        // Función para eliminar un libro de localStorage y del DOM
+        function removeBookFromMyBooks(id) {
+            let myBooks = JSON.parse(localStorage.getItem('myBooks')) || [];
+            const initialLength = myBooks.length;
+            myBooks = myBooks.filter(book => book.id !== id);
+
+            if (myBooks.length < initialLength) {
+                localStorage.setItem('myBooks', JSON.stringify(myBooks));
+                alert("Libro eliminado de 'Mis Libros'.");
+                // Volver a renderizar la lista para reflejar los cambios
+                location.reload(); // La forma más sencilla para un ejemplo, o llamar a una función renderizadora
+            } else {
+                alert("Error: No se pudo encontrar el libro para eliminar.");
+            }
+        }
+    });
+</script>
+
+</body>
+</html>
